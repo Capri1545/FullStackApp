@@ -29,7 +29,7 @@
         try
         {
             using var client = new HttpClient { BaseAddress = new Uri("http://localhost:5082") };
-            products = await client.GetFromJsonAsync<Product[]>("/api/products");
+            products = await client.GetFromJsonAsync<Product[]>("/api/productlist");
         }
         catch (HttpRequestException ex)
         {
