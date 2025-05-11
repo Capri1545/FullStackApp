@@ -18,14 +18,23 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
    - Refactored the code for better readability and maintainability by extracting the API call logic into a separate method.
 
 ### Activity 2: API Integration
-3. **Error Handling**:
+1. **Error Handling**:
    - Added error handling in the `FetchProducts.razor` component to gracefully handle invalid API responses and timeouts.
 
-4. **CORS Configuration**:
+2. **CORS Configuration**:
    - Configured CORS in the `ServerApp` to allow requests from the client origin (`http://localhost:5252`).
 
-5. **Updated API Endpoint**:
+3. **Updated API Endpoint**:
    - Changed the API endpoint from `/api/products` to `/api/productlist` in both the client (`FetchProducts.razor`) and the server (`Program.cs`).
+
+### Activity 3: API Testing
+1. **Refined JSON Structure**:
+   - Updated the `/api/productlist` endpoint in `Program.cs` to ensure the JSON structure adheres to industry standards.
+   - Explicitly defined the structure for better validation and consistency.
+
+2. **Created API Test File**:
+   - Added a `TestAPI.http` file in the `ServerApp` directory to facilitate testing of the `/api/productlist` endpoint.
+   - Included the expected response format in the `.http` file for reference.
 
 ## How AI Helped
 AI played a significant role in the development process by:

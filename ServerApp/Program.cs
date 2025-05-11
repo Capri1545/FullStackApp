@@ -29,6 +29,7 @@ app.MapGet(
                 Name = "Laptop",
                 Price = 1200.50,
                 Stock = 25,
+                Category = new { Id = 101, Name = "Electronics" },
             },
             new
             {
@@ -36,8 +37,16 @@ app.MapGet(
                 Name = "Headphones",
                 Price = 50.00,
                 Stock = 100,
+                Category = new { Id = 102, Name = "Accessories" },
             },
-        };
+        }.Select(product => new
+        {
+            product.Id,
+            product.Name,
+            product.Price,
+            product.Stock,
+            Category = new { product.Category.Id, product.Category.Name },
+        });
     }
 );
 
