@@ -41,8 +41,7 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
    - Replaced the redundant instantiation of `HttpClient` in `FetchProducts.razor` with dependency injection.
    - Improved maintainability and reduced resource usage by leveraging the built-in dependency injection mechanism.
 
-### Activity 5: Back-End Optimization
-1. **Implemented Caching**:
+2. **Implemented Caching**:
    - Added an in-memory caching strategy for the `/api/productlist` endpoint in `Program.cs`.
    - Reduced server load by storing and reusing the product list data for subsequent requests.
 
