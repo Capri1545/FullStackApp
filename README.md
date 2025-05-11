@@ -8,6 +8,7 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
 - **ClientApp**: Fetches product data from the server and displays it in a user-friendly interface.
 
 ## Changes Made
+### Activity 1: Code Cleanup
 1. **Removed Unnecessary Code**:
    - Removed the Counter and Weather components from the client-side application as they were no longer needed.
    - Deleted associated files (`Counter.razor`, `Weather.razor`, and `weather.json`).
@@ -16,6 +17,7 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
    - Added an API call in the `FetchProducts.razor` component to fetch product data from the server.
    - Refactored the code for better readability and maintainability by extracting the API call logic into a separate method.
 
+### Activity 2: API Integration
 3. **Error Handling**:
    - Added error handling in the `FetchProducts.razor` component to gracefully handle invalid API responses and timeouts.
 
