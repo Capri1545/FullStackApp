@@ -24,6 +24,9 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
 4. **CORS Configuration**:
    - Configured CORS in the `ServerApp` to allow requests from the client origin (`http://localhost:5252`).
 
+5. **Updated API Endpoint**:
+   - Changed the API endpoint from `/api/products` to `/api/productlist` in both the client (`FetchProducts.razor`) and the server (`Program.cs`).
+
 ## How AI Helped
 AI played a significant role in the development process by:
 - **Code Refactoring**: Suggested improvements for code readability and maintainability.
