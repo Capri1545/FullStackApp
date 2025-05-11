@@ -17,11 +17,20 @@ var app = builder.Build();
 // Use CORS middleware
 app.UseCors();
 
+var cache = new Dictionary<string, object>();
+
 app.MapGet(
     "/api/productlist",
     () =>
     {
-        return new[]
+        const string cacheKey = "productlist";
+
+        if (cache.TryGetValue(cacheKey, out var cachedData))
+        {
+            return Results.Ok(cachedData);
+        }
+
+        var productList = new[]
         {
             new
             {
@@ -39,14 +48,19 @@ app.MapGet(
                 Stock = 100,
                 Category = new { Id = 102, Name = "Accessories" },
             },
-        }.Select(product => new
-        {
-            product.Id,
-            product.Name,
-            product.Price,
-            product.Stock,
-            Category = new { product.Category.Id, product.Category.Name },
-        });
+        }
+            .Select(product => new
+            {
+                product.Id,
+                product.Name,
+                product.Price,
+                product.Stock,
+                Category = new { product.Category.Id, product.Category.Name },
+            })
+            .ToArray();
+
+        cache[cacheKey] = productList;
+        return Results.Ok(productList);
     }
 );
 

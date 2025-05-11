@@ -1,4 +1,5 @@
 @page "/fetchproducts"
+@inject HttpClient HttpClient
 
 <h3>Product List</h3>
 
@@ -28,8 +29,7 @@
     {
         try
         {
-            using var client = new HttpClient { BaseAddress = new Uri("http://localhost:5082") };
-            products = await client.GetFromJsonAsync<Product[]>("/api/productlist");
+            products = await HttpClient.GetFromJsonAsync<Product[]>("/api/productlist");
         }
         catch (HttpRequestException ex)
         {

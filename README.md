@@ -36,13 +36,25 @@ FullStackApp is a full-stack web application consisting of a server-side API (`S
    - Added a `TestAPI.http` file in the `ServerApp` directory to facilitate testing of the `/api/productlist` endpoint.
    - Included the expected response format in the `.http` file for reference.
 
+### Activity 4: Front-End Optimization
+1. **Reduced Redundant API Calls**:
+   - Replaced the redundant instantiation of `HttpClient` in `FetchProducts.razor` with dependency injection.
+   - Improved maintainability and reduced resource usage by leveraging the built-in dependency injection mechanism.
+
+### Activity 5: Back-End Optimization
+1. **Implemented Caching**:
+   - Added an in-memory caching strategy for the `/api/productlist` endpoint in `Program.cs`.
+   - Reduced server load by storing and reusing the product list data for subsequent requests.
+
 ## How AI Helped
 AI played a significant role in the development process by:
-- **Code Refactoring**: Suggested improvements for code readability and maintainability.
+- **Code Refactoring**: Suggested improvements for code readability and maintainability, including reducing redundant API calls in the front-end.
 - **Error Handling**: Added robust error handling mechanisms to ensure a smooth user experience.
 - **CORS Configuration**: Identified and resolved CORS issues by adding the necessary middleware to the server.
 - **File Cleanup**: Assisted in identifying and removing unused files and code.
-- **Documentation**: Generated this README file to summarize the application and the changes made.
+- **Documentation**: Generated and updated this README file to summarize the application and the changes made.
+- **API Testing**: Created a `.http` file to facilitate testing of the `/api/productlist` endpoint.
+- **JSON Validation**: Refined and validated the JSON structure of the `/api/productlist` endpoint to meet industry standards.
 
 ## How to Run
 1. **Start the Server**:
